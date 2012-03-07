@@ -31,13 +31,9 @@
 	// link attribution && privacy page 
 	?>
 	<p style="border-top:1px dotted #999;font-size: 10px;">
-		<?
-			if( get_plugin_setting( 'ha_settings_attribution_ok', 'elgg_social_login' ) ){
-		?> 
-			Powred by <a href="http://hybridauth.sourceforge.net" target="_blank">HybridAuth</a>
-		<?php
-			}
+		Powered by <a href="http://hybridauth.sourceforge.net" target="_blank">HybridAuth</a>
 
+		<?php
 			if( get_plugin_setting( 'ha_settings_privacy_page', 'elgg_social_login' ) ){
 		?> 
 			| <a href="<?php echo get_plugin_setting( 'ha_settings_privacy_page', 'elgg_social_login' ) ?>" target="_blank">Privacy</a>
@@ -45,9 +41,7 @@
 			}
 		?> 
 	</p>
-	<?php 
-
-	// eh um not a designer 
+	<?php   
 	echo "</div>";
 ?>
 <script>

@@ -1,8 +1,4 @@
-<?php 
-	/** 
-	* Updated to 1.8 thanks to anirupdutta for his work on facebook_api plugin
-	*/
-
+<?php
 	require_once (dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
 
 	// well, dont need theses
@@ -18,6 +14,8 @@
 	if( isset( $_GET["provider"] ) && ! isset( $_GET["redirect_to_provider"] )){
 		// selected provider 
 		$provider = @ trim( strip_tags( $_GET["provider"] ) ); 
+		
+		$_SESSION["HA::STORE"] = ARRAY(); 
 ?>
 <table width="100%" border="0">
   <tr>
@@ -31,7 +29,7 @@
   </tr> 
 </table>
 <script> 
-	setTimeout( function(){window.location.href = window.location.href + "&redirect_to_provider=ture"}, 750 );
+	setTimeout( function(){window.location.href = window.location.href + "&redirect_to_provider=true"}, 750 );
 </script>
 <?php
 		die();
@@ -71,6 +69,11 @@
 			// provider application secret ?
 			if( get_plugin_setting( 'ha_settings_' . $provider . '_app_secret', 'elgg_social_login' ) ){
 				$config["providers"][$provider]["keys"]["secret"] = get_plugin_setting( 'ha_settings_' . $provider . '_app_secret', 'elgg_social_login' );
+			}
+
+			// if facebook
+			if( strtolower( $provider ) == "facebook" ){
+				$config["providers"][$provider]["display"] = "popup";
 			}
 
 			// create an instance for Hybridauth

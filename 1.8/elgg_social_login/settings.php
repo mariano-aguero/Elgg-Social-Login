@@ -17,8 +17,7 @@
 		,
 		ARRAY( 
 			"provider_id"       => "Twitter",
-			"provider_name"     => "Twitter",
-			"callback"          => TRUE, 
+			"provider_name"     => "Twitter", 
 			"new_app_link"      => "https://dev.twitter.com/apps", 
 		)
 		,
@@ -45,8 +44,7 @@
 		,
 		ARRAY( 
 			"provider_id"       => "LinkedIn",
-			"provider_name"     => "LinkedIn",
-			"callback"          => TRUE, 
+			"provider_name"     => "LinkedIn", 
 			"new_app_link"      => "https://www.linkedin.com/secure/developer?newapp=", 
 		)
 		,
