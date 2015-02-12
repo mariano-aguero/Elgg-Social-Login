@@ -15,7 +15,7 @@ function exception_handler($e) {
 	throw new Exception( $e->getMessage(), $e->getCode() );
 }
 
-set_exception_handler( 'exception_handler ');
+set_exception_handler( 'exception_handler');
 
 
 require_once( "Hybrid/Auth.php" );
